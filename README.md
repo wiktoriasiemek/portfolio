@@ -1,8 +1,8 @@
-# Moje Portfolio / Wizytówka
+# Moje Portfolio
 
 Projekt interaktywnej wizytówki stworzony w ramach projektu na studia.
 
-Resources:
+## Resources:
 
 Podziękowania dla twórców zasobów wykorzystanych w projekcie:
 
