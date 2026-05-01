@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiktoria Siemek - Wizytówka</title>
     <style>
-        /* Stylizacja tła i kontenera */
         body, html {
             margin: 0;
             padding: 0;
@@ -14,18 +13,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #e0e0e0; /* Delikatne tło strony */
+            background-color: #e0e0e0;
             font-family: sans-serif;
         }
 
         .card-container {
-    position: relative;
-    width: 71%; /* Ustawienie szerokości na 75% szerokości ekranu */
-    max-width: 710px; /* Zmniejszenie max-width z 1000px na 750px (czyli 75%) */
-    line-height: 0;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-    transition: all 0.3s ease; /* Płynne skalowanie */
-}
+            position: relative;
+            /* Responsywna szerokość: na mobile zajmuje więcej miejsca, na PC mniej */
+            width: 90%; 
+            max-width: 710px; 
+            line-height: 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Na większych ekranach (np. laptop) przywracamy Twoje 71% */
+        @media (min-width: 768px) {
+            .card-container {
+                width: 71%;
+            }
+        }
 
         .card-container img {
             width: 100%;
@@ -33,38 +40,40 @@
             display: block;
         }
 
-        /* Przezroczysty przycisk nałożony na różowy guzik */
         .invisible-button {
-    position: absolute;
-    /* Przesuwamy mocno w lewo, bo różowy owal zaczyna się wcześnie */
-    left: 7.8%;      
-    /* Obniżamy, by przykryło różowy kolor na screenie */
-    bottom: 19.3%;   
-    
-    /* Zwiększamy szerokość, by przykryć cały różowy owal widoczny na screenie */
-    width: 41.5%;    
-    /* Wysokość dopasowana do grubości paska na screenie */
-    height: 9.3%;    
-    
-    background: rgba(255, 0, 0, 0); /* Pamiętaj o 0 na końcu dla pełnej przezroczystości */
-    cursor: pointer;
-    border-radius: 50px; 
-    text-decoration: none;
-}
+            position: absolute;
+            /* Procenty sprawiają, że przycisk "pływa" razem ze skalowanym obrazkiem */
+            left: 7.8%;      
+            bottom: 19.3%;   
+            width: 41.5%;    
+            height: 9.3%;    
+            background: rgba(255, 0, 0, 0); 
+            cursor: pointer;
+            border-radius: 50px; 
+            text-decoration: none;
+            /* Zapobiega podświetlaniu tła na niebiesko przy dotknięciu na telefonie */
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        /* Opcjonalny efekt po najechaniu, żeby rekruter wiedział, że można kliknąć */
         .invisible-button:hover {
             background: rgba(255, 255, 255, 0.1); 
+        }
+
+        /* Optymalizacja pod telefony trzymane pionowo */
+        @media (max-width: 480px) {
+            .card-container {
+                width: 95%; /* Na małych telefonach wykorzystujemy prawie cały ekran */
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="card-container">
-        <!-- Twoje zdjęcie PNG -->
+        <!-- Pamiętaj, aby plik PORTFOLIO.png był w tym samym folderze na GitHubie -->
         <img src="PORTFOLIO.png" alt="Wiktoria Siemek - Studentka Informatyki i Projektantka">
 
-        <!-- Link prowadzący do Twojego Behance lub PDF -->
         <a href="https://www.behance.net/wiktoriasiemek" class="invisible-button" target="_blank" title="Zobacz moje projekty"></a>
     </div>
 
