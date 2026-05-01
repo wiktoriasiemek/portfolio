@@ -19,7 +19,6 @@
 
         .card-container {
             position: relative;
-            /* Responsywna szerokość: na mobile zajmuje więcej miejsca, na PC mniej */
             width: 90%; 
             max-width: 710px; 
             line-height: 0;
@@ -27,7 +26,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Na większych ekranach (np. laptop) przywracamy Twoje 71% */
         @media (min-width: 768px) {
             .card-container {
                 width: 71%;
@@ -42,7 +40,6 @@
 
         .invisible-button {
             position: absolute;
-            /* Procenty sprawiają, że przycisk "pływa" razem ze skalowanym obrazkiem */
             left: 7.8%;      
             bottom: 19.3%;   
             width: 41.5%;    
@@ -51,7 +48,6 @@
             cursor: pointer;
             border-radius: 50px; 
             text-decoration: none;
-            /* Zapobiega podświetlaniu tła na niebiesko przy dotknięciu na telefonie */
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -59,10 +55,9 @@
             background: rgba(255, 255, 255, 0.1); 
         }
 
-        /* Optymalizacja pod telefony trzymane pionowo */
         @media (max-width: 480px) {
             .card-container {
-                width: 95%; /* Na małych telefonach wykorzystujemy prawie cały ekran */
+                width: 95%; 
                 box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             }
         }
@@ -71,7 +66,6 @@
 <body>
 
     <div class="card-container">
-        <!-- Pamiętaj, aby plik PORTFOLIO.png był w tym samym folderze na GitHubie -->
         <img src="PORTFOLIO.png" alt="Wiktoria Siemek - Studentka Informatyki i Projektantka">
 
         <a href="https://www.behance.net/wiktoriasiemek" class="invisible-button" target="_blank" title="Zobacz moje projekty"></a>
